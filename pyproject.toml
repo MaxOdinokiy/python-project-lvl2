@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mo-gendiff"
-version = "0.3.0"
+version = "0.4.0"
 description = ""
 authors = ["Max Odinokiy <max.odinokiy@gmail.com>"]
 packages = [
