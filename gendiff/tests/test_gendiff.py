@@ -31,4 +31,3 @@ def test_diff_different_formats():
     f = open('gendiff/tests/fixtures/result1.txt', "r")
     assert generate_diff(file_1_path, file_2_path) == f.read()
     f.close()
-    
