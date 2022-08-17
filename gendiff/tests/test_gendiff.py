@@ -1,4 +1,3 @@
-import pytest
 import os
 from gendiff.run_gendiff import generate_diff
 
@@ -8,7 +7,6 @@ dirrectory = 'gendiff/tests/fixtures'
 
 def make_file_path(file_name):
     return os.path.join(dirrectory, file_name)
-
 
 
 def test_diff_json_format():
@@ -33,3 +31,4 @@ def test_diff_different_formats():
     f = open('gendiff/tests/fixtures/result1.txt', "r")
     assert generate_diff(file_1_path, file_2_path) == f.read()
     f.close()
+    
