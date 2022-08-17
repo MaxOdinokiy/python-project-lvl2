@@ -1,9 +1,35 @@
-from gendiff.run_gendiff import generate_diff
+import pytest
 import os
-basedir = os.path.abspath(os.getcwd())
-print(basedir)
+from gendiff.run_gendiff import generate_diff
 
-def test_diff():
-    f = open(f'{basedir}/gendiff/tests/fixtures/result1.txt', "r")
-    assert generate_diff("gendiff/tests/fixtures/file1.json", "gendiff/tests/fixtures/file2.json") == f.read()
+
+dirrectory = 'gendiff/tests/fixtures'
+
+
+def make_file_path(file_name):
+    return os.path.join(dirrectory, file_name)
+
+
+
+def test_diff_json_format():
+    file_1_path = make_file_path('file1.json')
+    file_2_path = make_file_path('file2.json')
+    f = open('gendiff/tests/fixtures/result1.txt', "r")
+    assert generate_diff(file_1_path, file_2_path) == f.read()
+    f.close()
+
+
+def test_diff_yaml_format():
+    file_1_path = make_file_path('file1.yaml')
+    file_2_path = make_file_path('file2.yaml')
+    f = open('gendiff/tests/fixtures/result1.txt', "r")
+    assert generate_diff(file_1_path, file_2_path) == f.read()
+    f.close()
+
+
+def test_diff_different_formats():
+    file_1_path = make_file_path('file1.json')
+    file_2_path = make_file_path('file2.yaml')
+    f = open('gendiff/tests/fixtures/result1.txt', "r")
+    assert generate_diff(file_1_path, file_2_path) == f.read()
     f.close()

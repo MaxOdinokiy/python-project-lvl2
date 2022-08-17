@@ -1,10 +1,14 @@
 #!/usr/bin/env python3
-import json
+from gendiff import file_parser
+
+
+def start(args):
+    print(generate_diff(args.first_file, args.second_file))
 
 
 def generate_diff(file_path1, file_path2):
-    file_data1 = json.load(open(file_path1))
-    file_data2 = json.load(open(file_path2))
+    file_data1 = file_parser.pars(file_path1)
+    file_data2 = file_parser.pars(file_path2)
     result = ['{']
     common_keys_list = sorted(list(file_data1.keys() | file_data2.keys()))
     deleted_fil1_keys = file_data1.keys() - file_data2.keys()
