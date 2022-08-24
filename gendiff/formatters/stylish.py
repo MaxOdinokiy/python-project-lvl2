@@ -7,6 +7,10 @@ STATUSES = {
 }
 
 
+def rend_stylish(diff):
+    return walk(diff)
+
+
 def get_string_value(value, depth):
     if isinstance(value, dict):
         lines = []
