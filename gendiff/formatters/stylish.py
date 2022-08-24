@@ -16,7 +16,7 @@ def get_string_value(value, depth):
         lines = []
         for key, val in value.items():
             lines.append('{0}  {1}: {2}'.format(
-                get_intend(depth+1), key, get_string_value(val, depth+1)
+                get_intend(depth + 1), key, get_string_value(val, depth + 1)
             ))
         result = '\n'.join(lines)
         return f"{{\n{result}\n{get_intend(depth)}  }}"
@@ -41,7 +41,7 @@ def walk(data, depth=0):
     children = data.get('children')
     intend = get_intend(depth)
     if status == 'NESTED':
-        lines = map(lambda child: walk(child, depth+1), children)
+        lines = map(lambda child: walk(child, depth + 1), children)
         res = '\n'.join(lines)
         return f"{intend}  {key}: {{\n{res}\n{intend}  }}"
     if status == 'ADDED':
