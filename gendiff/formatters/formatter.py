@@ -1,4 +1,3 @@
-from pydoc import plain
 from gendiff.formatters import stylish, plain, json
 
 

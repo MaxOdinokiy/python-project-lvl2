@@ -11,7 +11,7 @@ def rend_plain(data):
 
 def get_string_value(value):
     if isinstance(value, dict):
-        return f'[complex value]'
+        return '[complex value]'
     if isinstance(value, bool):
         return str(value).lower()
     if value is None:
@@ -21,6 +21,7 @@ def get_string_value(value):
 
 def make_path(depth, key):
     return '.'.join((depth, key)) if depth else key
+
 
 def walk(data, depth=''):
     result = []
@@ -44,6 +45,5 @@ def walk(data, depth=''):
     if status == 'DELETED':
         return f"Property '{depth}' was {STATUSES[status]}"
     if status == 'CHANGED':
-        return f"Property '{depth}' was {STATUSES[status]}. From {value1} to {value2}"
+        return f"Property '{depth}' was {STATUSES[status]}. From {value1} to {value2}"  # noqa
     return 'unchanged'
-    
