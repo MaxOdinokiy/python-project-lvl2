@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "mo-gendiff"
+name = "hexlet-code"
 version = "0.4.0"
 description = ""
 authors = ["Max Odinokiy <max.odinokiy@gmail.com>"]
