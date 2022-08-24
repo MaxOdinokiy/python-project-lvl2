@@ -36,7 +36,7 @@ def test_diff_different_formats():
 def test__tree_json():
     file_1_path = make_file_path('tree_file_1.json')
     file_2_path = make_file_path('tree_file_2.json')
-    f = open('gendiff/tests/fixtures/result_2.txt', "r")
+    f = open('gendiff/tests/fixtures/stylish_result.txt', "r")
     assert generate_diff(file_1_path, file_2_path) == f.read()
     f.close()
 
@@ -44,6 +44,14 @@ def test__tree_json():
 def test__tree_yaml():
     file_1_path = make_file_path('tree_file_1.yml')
     file_2_path = make_file_path('tree_file_2.yml')
-    f = open('gendiff/tests/fixtures/result_2.txt', "r")
+    f = open('gendiff/tests/fixtures/stylish_result.txt', "r")
     assert generate_diff(file_1_path, file_2_path) == f.read()
+    f.close()
+
+
+def test_plain_format():
+    file_1_path = make_file_path('tree_file_1.json')
+    file_2_path = make_file_path('tree_file_2.json')
+    f = open('gendiff/tests/fixtures/plain_result.txt', "r")
+    assert generate_diff(file_1_path, file_2_path, 'plain') == f.read()
     f.close()

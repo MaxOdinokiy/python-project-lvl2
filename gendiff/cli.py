@@ -13,6 +13,7 @@ def run():
         metavar='FORMAT',
         help='set format of output',
         default='stylish',
+        choices=['stylish', 'plain']
     )
     args = parser.parse_args()
     return args
