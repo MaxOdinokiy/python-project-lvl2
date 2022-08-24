@@ -1,5 +1,6 @@
 from gendiff.formatters import stylish
 
+
 def formatter(data, format):
     if format == 'stylish':
         return stylish.rend_stylish(data)
