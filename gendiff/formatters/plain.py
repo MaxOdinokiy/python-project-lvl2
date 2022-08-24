@@ -14,6 +14,8 @@ def get_string_value(value):
         return '[complex value]'
     if isinstance(value, bool):
         return str(value).lower()
+    if isinstance(value, int):
+        return value
     if value is None:
         return 'null'
     return f"'{value}'"
