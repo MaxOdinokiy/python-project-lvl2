@@ -1,5 +1,5 @@
 import os
-from gendiff.run_gendiff import generate_diff
+from gendiff.generate_diff import generate_diff
 
 
 dirrectory = 'gendiff/tests/fixtures'

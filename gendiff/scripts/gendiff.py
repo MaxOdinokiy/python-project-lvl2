@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-from gendiff import run_gendiff, cli
+from gendiff import generate_diff, cli
 
 
 def main():
     args = cli.run()
-    run_gendiff.start(args)
+    generate_diff.start(args)
 
 
 if '__name__' == '__main__':
