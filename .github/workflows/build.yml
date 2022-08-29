@@ -34,6 +34,6 @@ jobs:
         env:
           CC_TEST_REPORTER_ID: .env.TEST_COVERAGE
         with:
-          coverageCommand: make test-coverage
+          coverageCommand: make coverage
           debug: true
 
