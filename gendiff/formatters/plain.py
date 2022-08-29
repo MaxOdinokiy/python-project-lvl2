@@ -11,14 +11,16 @@ def rend_plain(data):
 
 def get_string_value(value):
     if isinstance(value, dict):
-        return '[complex value]'
-    if isinstance(value, bool):
-        return str(value).lower()
-    if isinstance(value, int):
-        return value
-    if value is None:
-        return 'null'
-    return f"'{value}'"
+        value = '[complex value]'
+    elif isinstance(value, bool):
+        value = str(value).lower()
+    elif isinstance(value, int):
+        value = value
+    elif value is None:
+        value = 'null'
+    else:
+        value = f"'{value}'"
+    return value
 
 
 def make_path(depth, key):
