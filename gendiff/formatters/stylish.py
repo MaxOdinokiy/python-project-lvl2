@@ -40,20 +40,22 @@ def walk(data, depth=0):
     status = data.get('status')
     children = data.get('children')
     intend = get_intend(depth)
-    if status == 'NESTED':
-        lines = map(lambda child: walk(child, depth + 1), children)
-        res = '\n'.join(lines)
-        return f"{intend}  {key}: {{\n{res}\n{intend}  }}"
-    if status == 'ADDED':
-        return f'{intend}{STATUSES[status]} {key}: {value}'
-    if status == 'DELETED':
-        return f'{intend}{STATUSES[status]} {key}: {value}'
-    if status == 'UNCHANGED':
-        return f'{intend}{STATUSES[status]} {key}: {value}'
-    if status == 'CHANGED':
-        return f'{intend}- {key}: {value1}\n' \
-            f'{intend}+ {key}: {value2}'
     if status == 'main':
         lines = map(lambda child: walk(child, depth), children)
         result = '\n'.join(lines)
-    return f'{{\n{result}\n}}'
+        return f'{{\n{result}\n}}'
+    if status == 'NESTED':
+        lines = map(lambda child: walk(child, depth + 1), children)
+        res = '\n'.join(lines)
+        result = f"{intend}  {key}: {{\n{res}\n{intend}  }}"
+    if status == 'ADDED':
+        result = f'{intend}{STATUSES[status]} {key}: {value}'
+    if status == 'DELETED':
+        result = f'{intend}{STATUSES[status]} {key}: {value}'
+    if status == 'UNCHANGED':
+        result = f'{intend}{STATUSES[status]} {key}: {value}'
+    if status == 'CHANGED':
+        result = f'{intend}- {key}: {value1}\n' \
+            f'{intend}+ {key}: {value2}'
+    return result
+    
