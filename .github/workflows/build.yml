@@ -35,5 +35,3 @@ jobs:
           CC_TEST_REPORTER_ID: .env.TEST_COVERAGE
         with:
           run: pytest --cov
-          debug: true
-
