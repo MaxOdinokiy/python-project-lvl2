@@ -34,4 +34,6 @@ jobs:
         env:
           CC_TEST_REPORTER_ID: .env.TEST_COVERAGE
         with:
-          run: pytest --cov
+          coverageCommand: make pytest --cov
+          debug: true
+
