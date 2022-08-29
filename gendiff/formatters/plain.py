@@ -39,15 +39,16 @@ def walk(data, depth=''):
     if status == 'main':
         lines = map(lambda child: walk(child), children)
         result = '\n'.join(lines)
-        return result
     if status == 'NESTED':
         lines = map(lambda child: walk(child, depth), children)
         filtered_lines = filter(lambda line: line != 'unchanged', lines)
-        return '\n'.join(filtered_lines)
+        result = '\n'.join(filtered_lines)
     if status == 'ADDED':
-        return f"Property '{depth}' was {STATUSES[status]} with value: {value}"
+        result = f"Property '{depth}' was {STATUSES[status]} with value: {value}"
     if status == 'DELETED':
-        return f"Property '{depth}' was {STATUSES[status]}"
+        result = f"Property '{depth}' was {STATUSES[status]}"
     if status == 'CHANGED':
-        return f"Property '{depth}' was {STATUSES[status]}. From {value1} to {value2}"  # noqa
-    return 'unchanged'
+        result = f"Property '{depth}' was {STATUSES[status]}. From {value1} to {value2}"  # noqa
+    if status == 'UNCHANGED':
+        result = 'unchanged'
+    return result
