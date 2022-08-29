@@ -7,3 +7,7 @@ dist/
 coverage.xml
 .pytest_cache/
 .vim
+.DS_Store
+.vscode/
+gendiff/.DS_Store
+gendiff/tests/.DS_Store
