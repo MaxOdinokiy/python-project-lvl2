@@ -11,3 +11,4 @@ coverage.xml
 .vscode/
 gendiff/.DS_Store
 gendiff/tests/.DS_Store
+.env
