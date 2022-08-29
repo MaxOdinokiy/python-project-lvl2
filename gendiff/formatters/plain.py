@@ -44,7 +44,7 @@ def walk(data, depth=''):
         filtered_lines = filter(lambda line: line != 'unchanged', lines)
         result = '\n'.join(filtered_lines)
     if status == 'ADDED':
-        result = f"Property '{depth}' was {STATUSES[status]} with value: {value}"
+        result = f"Property '{depth}' was {STATUSES[status]} with value: {value}"  # noqa
     if status == 'DELETED':
         result = f"Property '{depth}' was {STATUSES[status]}"
     if status == 'CHANGED':

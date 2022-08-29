@@ -58,4 +58,3 @@ def walk(data, depth=0):
         result = f'{intend}- {key}: {value1}\n' \
             f'{intend}+ {key}: {value2}'
     return result
-    
