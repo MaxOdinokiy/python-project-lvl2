@@ -19,5 +19,5 @@ lint:
 test:
 	poetry run pytest
 
-coverage:
-	poetry run pytest --cov
+test-coverage:
+	poetry run pytest --cov=hexlet_python_package --cov-report xml
