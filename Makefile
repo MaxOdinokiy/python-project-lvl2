@@ -20,4 +20,4 @@ test:
 	poetry run pytest
 
 coverage:
-	poetry run coverage report
+	poetry run pytest --cov
