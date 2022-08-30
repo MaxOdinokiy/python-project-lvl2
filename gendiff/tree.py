@@ -1,4 +1,8 @@
 def make_diff(file_1, file_2):
+    '''
+    Returns difference between 2 files in python format.
+    Allows to check difference for nested values
+    '''
     diff = []
     deleted_from_file_1 = file_1.keys() - file_2.keys()
     added_to_file_2 = file_2.keys() - file_1.keys()

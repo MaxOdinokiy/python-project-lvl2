@@ -12,6 +12,9 @@ def rend_stylish(diff):
 
 
 def get_string_value(value, depth):
+    '''
+    Making string from bool type, Nonetype and nested values
+    '''
     if isinstance(value, dict):
         lines = []
         for key, val in value.items():
