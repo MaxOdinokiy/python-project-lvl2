@@ -5,7 +5,7 @@ DESCRIPTION = 'Compares two configuration files and shows a difference.'
 
 def run():
     '''
-    Creating console args for gendiff. 
+    Creating console args for gendiff.
     Returns input args - files (file1 and file2)
     '''
     parser = argparse.ArgumentParser(description=DESCRIPTION)
