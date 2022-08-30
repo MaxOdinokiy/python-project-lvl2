@@ -12,4 +12,4 @@ coverage.xml
 gendiff/.DS_Store
 gendiff/tests/.DS_Store
 .env
-cc-test-reporter
+
